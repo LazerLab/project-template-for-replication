@@ -1,0 +1,8 @@
+# This file, or one like it, stores the configuration of software and libraries used when developing the code. 
+# Tools that package this information together are intended to make code runnable later and on other machines.
+#
+# Some tools that may create such a file:
+# -Docker containers
+# -Python virtual environments (https://docs.python.org/3/tutorial/venv.html)
+# -Conda for python, R, or other languages
+# -Packrat for R

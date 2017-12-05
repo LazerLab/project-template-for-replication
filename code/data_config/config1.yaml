@@ -1,0 +1,28 @@
+# Keeping file paths separate from the rest of the code (even just together at the top of the file) is a good practice for maintainability. This way, when
+# file locations are updated, there's a single section of code to change. 
+# Storing these paths in external config files may be useful, especially when the code spans multiple files and/or we expect multiple versions of results. 
+# This way, code and data paths can be updated independently.
+#
+# How to use .yaml files:
+# 	-One (arbitrary) example file: https://gist.github.com/ebattenberg/f5ea4b958edc3869515d
+# 	-There are libraries (in python, R, etc.) to read .yaml. Instead of the code having a line that hard-codes a path, `output_file = "~/Documents/..."`,
+# 	 code would:
+# 		-expect config file as an argument: config_file = args[1]
+#		-parse the yaml into an object: yaml_data = yaml.parse(config_file)
+#		-`output_file = yaml_data.get('output_after_fixing_punctuation')` 
+#	[note: this syntax is for illustration only; doesn't correspond to any actual language]
+#
+# Example development steps (not comprehensive!) might be: 
+#   Code is run at the command line as: code1.py config1.yaml 
+#	--> Store this command in cmds.sh.
+#   Try changing the processing rules.
+#	--> Store the old option in config1.yaml, and create a config2.yaml with the new option and a new output file. Have the code
+#   	switch its behavior based on the config option. Store the preferred version in cmds.sh (and maybe document other version in old_cmds.sh).
+#   Bug fixed in code. 
+#	--> Rerun as code1.py config1.yaml and code1.py config2.yaml (respectively), overwriting old data
+#	OR
+#	--> Make a new data dir, with today's date embedded in it, and create config3.yaml and config4.yaml to output there.
+#	AND/OR
+#	--> Rename the improved code to code_todays_date.py. (If using git, can keep orig name, check in the latest version.)
+#
+#       --> Then, rerun data generation (and downstream files), and update cmds.sh with the new names (and maybe document previous versions in old_cmds.sh).

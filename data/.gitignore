@@ -1,0 +1,3 @@
+# This file present so that git will include the otherwise-empty directory.
+# If any (raw or intermediate) data files are too bit to check into git, write their names (local paths), one per line, in a file named .gitignore in a parent directory.
+# (See git documentation for further options.)
