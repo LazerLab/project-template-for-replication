@@ -1,7 +1,7 @@
 # project-template-for-replication
 Near-empty template directory to aid project replicability
 
-Use this file README.md to walk a newcomer through setting up the project and finding the right code to run. For example,* 
+Use this file README.md to walk a newcomer through setting up the project and finding the right code to run. For example,
 
 * System configuration: the file `environment` contains a Python virtual environment. Activate it by installing `[...]` and then running `[...]`.
 
